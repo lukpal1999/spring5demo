@@ -1,11 +1,8 @@
 package guru.springframework.spring5webapp.model;
 
-import lombok.Data;
-
 import javax.persistence.*;
 
 @Entity
-@Data
 public class Publisher {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
