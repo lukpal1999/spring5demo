@@ -23,6 +23,7 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> 
         this.publisherRepository = publisherRepository;
     }
 
+
     @Override
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
         initData();

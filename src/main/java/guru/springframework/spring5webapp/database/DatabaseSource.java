@@ -1,6 +1,6 @@
 package guru.springframework.spring5webapp.database;
 
-public class DataSource {
+public class DatabaseSource {
     private String userName;
     private String password;
     private String dburl;
