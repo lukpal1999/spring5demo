@@ -4,7 +4,6 @@ import guru.springframework.spring5webapp.controllers.ConstructorInjectedControl
 import guru.springframework.spring5webapp.controllers.MyController;
 import guru.springframework.spring5webapp.controllers.PropertyInjectedController;
 import guru.springframework.spring5webapp.controllers.SetterInjectedController;
-import jdk.nashorn.internal.objects.annotations.Setter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -17,6 +16,7 @@ public class Spring5webappApplication {
 
 		MyController controller = (MyController) ctx.getBean("myController");
 		//controller.hello();
+		//DataSource dataSource =  ctx.getBean(DataSource.class);
 
 		System.out.println(controller.hello());
 		System.out.println(ctx.getBean(PropertyInjectedController.class).sayHello());
