@@ -2,12 +2,14 @@ package guru.springframework.spring5webapp.config;
 
 import guru.springframework.spring5webapp.database.DatabaseSource;
 import guru.springframework.spring5webapp.database.JMSSource;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.PropertySources;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+import org.springframework.core.env.Environment;
 
 @Configuration
 //@PropertySource({"classpath:datasource.properties","classpath:jms.properties"})
@@ -16,6 +18,9 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
         @PropertySource("classpath:jms.properties")
 })
 public class DatabaseSourceConfig {
+    @Autowired
+    Environment enviroment;
+
     @Value("${guru.username}")
     String userName;
 
@@ -37,6 +42,7 @@ public class DatabaseSourceConfig {
         databaseSource.setUserName(userName);
         databaseSource.setPassword(password);
         databaseSource.setPassword(dbUrl);
+        databaseSource.setUserName(enviroment.getProperty("USERNAME"));
 
         return databaseSource;
     }
