@@ -105,8 +105,8 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
         guacamoleRecipe.getCategories().add(mexicanCategory);
         guacamoleRecipe.getCategories().add(polishCategory);
         guacamoleRecipe.setDirections("All you really need to make guacamole is ripe avocados and salt. After that, a little lime or lemon juice");
-        guacamoleRecipe.getIngredients().add(chickenIngredientOne);
-        guacamoleRecipe.getIngredients().add(chickenIngredientTwo);
+        guacamoleRecipe.getIngredients().add(guacamoleIngredientOne);
+        guacamoleRecipe.getIngredients().add(guacamoleIngredientTwo);
 
         Note guacamoleNote = new Note(guacamoleRecipe,"Guacamole, a dip made from avocados, is originally from Mexico. The name is derived from two Aztec Nahuatl words—ahuacatl (avocado) and molli (sauce).\n" +
                 "\n" +
