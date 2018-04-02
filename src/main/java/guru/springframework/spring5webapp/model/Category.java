@@ -1,40 +1,27 @@
 package guru.springframework.spring5webapp.model;
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.util.Set;
 
+@Data
+@EqualsAndHashCode(exclude = {"recipes"})
 @Entity
 public class Category {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
-    private String id;
+    private Long id;
 
     private String description;
 
     @ManyToMany (mappedBy = "categories")
     private Set<Recipe> recipes;
 
-    public String getId() {
-        return id;
+    public Category() {
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Set<Recipe> getRecipes() {
-        return recipes;
-    }
-
-    public void setRecipes(Set<Recipe> recipes) {
-        this.recipes = recipes;
+    protected boolean canEqual(Object other) {
+        return other instanceof Category;
     }
 }
